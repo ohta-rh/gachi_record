@@ -9,9 +9,6 @@ module GachiRecord
   #   
   class Base
     class << self
-
-      
-
       #
       # === find by natural key
       #  - id integer
@@ -23,11 +20,8 @@ module GachiRecord
         raise ArgumentError unless id
         query = sprintf(%(SELECT * FROM #{table_name} WHERE id = %d), id)
         
-        res = connection.execute(query)
-        res.each {|r| r.extend Result::Behavior}
-
-
-
+        res = connection.execute(query).first
+        res.extend Result::Behavior
       end
 
       protected

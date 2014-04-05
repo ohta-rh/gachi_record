@@ -3,6 +3,4 @@ require 'lib/gachi_record'
 require 'models/user'
 
 u = User.find 1
-u.each do |u|
-  p u.id
-end
+p u.id
