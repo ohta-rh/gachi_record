@@ -2,5 +2,9 @@ $:.unshift File.dirname(__FILE__)
 require 'lib/gachi_record'
 require 'models/user'
 
-User.find 1
+u = User.find 1
+
+p u.name
+p u.email
+p u.password
 

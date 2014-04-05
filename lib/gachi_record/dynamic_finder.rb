@@ -30,10 +30,10 @@ module GachiRecord
       #
       def find_by(conditions={})
         raise ArgumentError if conditions.empty?
-        query = %(SELECT * FROM #{@table_name} #{build_condition(conditions)})
+        query = %(SELECT * FROM #{table_name} #{build_condition(conditions)})
         res = connection.execute(query).first
 
-        unless res.nil?
+        if res.nil?
           raise RecordNotFound
         end
         res.extend Result::Behavior
@@ -55,7 +55,7 @@ module GachiRecord
       end
 
       def table_name
-        @table_name = self.downcase.to_s + "s"
+        @table_name ||= self.to_s.downcase + "s"
       end
     end
   end
