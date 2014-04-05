@@ -1,2 +1,2 @@
-require 'rspec'
+require 'singleton'
 require 'gachi_record'
