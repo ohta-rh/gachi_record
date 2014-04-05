@@ -8,6 +8,7 @@ module GachiRecord
   #     => 1
   #   ```
   class Result
+
     module Behavior
       def method_missing(method, *args)
         if self.has_key?(method.to_sym)
