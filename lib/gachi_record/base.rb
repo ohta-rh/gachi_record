@@ -27,4 +27,3 @@ module GachiRecord
     end
   end
 end
-

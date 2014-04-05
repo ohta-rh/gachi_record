@@ -1,0 +1,1 @@
+require 'gachi_record'
