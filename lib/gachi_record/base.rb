@@ -20,6 +20,10 @@ module GachiRecord
       def find(id)
         raise NotImplementedError
       end
+
+      def connection
+        @connection ||= Connection.instacne
+      end
     end
   end
 end

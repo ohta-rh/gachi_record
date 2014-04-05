@@ -1,1 +1,1 @@
-require './gachi_record/base'
+require 'gachi_record/base'
