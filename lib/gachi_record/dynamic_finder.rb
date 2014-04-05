@@ -31,7 +31,7 @@ module GachiRecord
       def find_by(conditions={})
         raise ArgumentError if conditions.empty?
         query = %(SELECT * FROM #{@table_name} #{build_condition(conditions)})
-        connection.execute(query).first
+        res = connection.execute(query).first
 
         unless res.nil?
           raise RecordNotFound
