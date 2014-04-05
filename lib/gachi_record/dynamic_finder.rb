@@ -55,7 +55,7 @@ module GachiRecord
       end
 
       def table_name
-        @table_name = self.to_s + "s"
+        @table_name = self.downcase.to_s + "s"
       end
     end
   end
